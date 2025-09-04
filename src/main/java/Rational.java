@@ -13,6 +13,8 @@ class Rational {
      */
     Rational() {
         // to be completed
+        numerator = 1;
+        denominator = 1;
     }
 
     /***
@@ -23,6 +25,12 @@ class Rational {
      */
     Rational(long numerator, long denominator) throws Illegal { 
         // to be completed
+        if (denominator == 0) {
+            throw new Illegal ("denominator is zero");
+        }
+        this.numerator = numerator;
+        this.denominator = denominator;
+        simplestForm();
     }
 
     /***

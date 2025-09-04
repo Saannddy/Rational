@@ -46,6 +46,25 @@ public class RationalTest {
     }
 
     @Test
+    public void testDefaultConstructor() {
+        r1 = new Rational();
+        Assert.assertEquals(1, r1.numerator);
+        Assert.assertEquals(1, r1.denominator);
+    }
+
+    @Test
+    public void testParameterConstructor() throws Exception {
+        r1 = new Rational(3,6);
+        Assert.assertEquals(1, r1.numerator);
+        Assert.assertEquals(2, r1.denominator);
+    }
+
+    @Test (expected = Rational.Illegal.class)
+    public void testInvalidParameterConstructor() throws Exception {
+        Rational r1 = new Rational(1,0);
+    }
+
+    @Test
     public void testSubtract() {
         r1.numerator = 1;
         r1.denominator = 2;
