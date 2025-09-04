@@ -44,4 +44,86 @@ public class RationalTest {
         r1 = null;
         r2 = null;
     }
+
+    @Test
+    public void testSubtract() {
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 4;
+        r1.subtract(r2);
+        Assert.assertEquals(1, r1.numerator);
+        Assert.assertEquals(4, r1.denominator);
+    }
+
+    @Test
+    public void testMultiply() {
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 4;
+        r1.multiply(r2);
+        Assert.assertEquals(1, r1.numerator);
+        Assert.assertEquals(8, r1.denominator);
+    }
+
+    @Test
+    public void testDivide() {
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 4;
+        r1.divide(r2);
+        Assert.assertEquals(2, r1.numerator);
+        Assert.assertEquals(1, r1.denominator);
+    }
+
+    @Test
+    public void testEquals() {
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 4;
+        Assert.assertFalse(r1.equals(r2));
+
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 2;
+        Assert.assertTrue(r1.equals(r2));
+    }
+
+    @Test
+    public void testCompareToMore() {
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 4;
+        Assert.assertTrue(r1.compareTo(r2) > 0);
+    }
+
+    @Test
+    public void testCompareToEquals() {
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 2;
+        Assert.assertTrue(r1.compareTo(r2) == 0);
+    }
+
+    @Test
+    public void testCompareToLess() {
+        r1.numerator = 1;
+        r1.denominator = 4;
+        r2.numerator = 1;
+        r2.denominator = 2;
+        Assert.assertTrue(r1.compareTo(r2) < 0);
+    }
+
+    @Test
+    public void testToString() {
+        r1.numerator = 1;
+        r1.denominator = 2;
+        Assert.assertEquals(r1.toString(), "1/2");
+    }
 }
