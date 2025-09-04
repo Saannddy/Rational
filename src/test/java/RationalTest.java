@@ -79,18 +79,21 @@ public class RationalTest {
     }
 
     @Test
-    public void testEquals() {
-        r1.numerator = 1;
-        r1.denominator = 2;
-        r2.numerator = 1;
-        r2.denominator = 4;
-        Assert.assertFalse(r1.equals(r2));
-
+    public void testEqualsTrue() {
         r1.numerator = 1;
         r1.denominator = 2;
         r2.numerator = 1;
         r2.denominator = 2;
         Assert.assertTrue(r1.equals(r2));
+    }
+
+    @Test
+    public void testEqualsFalse() {
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 4;
+        Assert.assertFalse(r1.equals(r2));
     }
 
     @Test

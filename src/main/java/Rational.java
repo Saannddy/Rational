@@ -96,6 +96,8 @@ class Rational {
         // to be completed
         if (x instanceof Rational) {
             Rational x2 = (Rational)x;
+            simplestForm();
+            x2.simplestForm();
             return x2.numerator == numerator && x2.denominator == denominator;
         } else return false;
     }
